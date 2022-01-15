@@ -1,4 +1,4 @@
-## <p style="border: none; padding-bottom: 40px;">Site feito com ![Imagem SASS](./img/sass-original.svg)</p>
+## <p style="border: none; padding-bottom: 40px; width: 150px; height: 100px;">Site feito com <br><br> ![Imagem SASS](./img/sass-img-readme.png)</p><br>
 
 
 ## <p style="border-bottom: 1px solid #eaeaea; width: 160px;">Sobre o projeto</p>
