@@ -40,8 +40,9 @@
             right: 120px;
         }
         @include device(small){
-            width: 30%;
-            margin-top: 70px;
+            width: 35%;
+            position: relative;
+            bottom: 15px;
         }
     }
 }

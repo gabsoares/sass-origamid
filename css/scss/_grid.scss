@@ -24,7 +24,7 @@ $small-device: 454px;
         }
     }
     @else if $size == small {
-        @media screen and (min-width: #{$small-device}) and (max-width: #{$medium-device - 1}){
+        @media screen and (min-width: 250px) and (max-width: #{$medium-device - 1}){
             @content;
         }
     }
