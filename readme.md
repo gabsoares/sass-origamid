@@ -1,4 +1,4 @@
-## <p style="width: 150px; height: 100px; border: none; padding-bottom: 40px;">Site feito com ![Imagem SASS](./img/sass-original.svg)</p>
+## <p style="width: 150px; height: 30px; border: none; padding-bottom: 40px;">Site feito com ![Imagem SASS](./img/sass-original.svg)</p>
 
 
 ## <p style="border-bottom: 1px solid #eaeaea; width: 160px;">Sobre o projeto</p>
@@ -12,6 +12,6 @@
 
 ## <p style="padding-top: 30px; border-bottom: 1px solid #eaeaea; width: 160px">Layout do Site</p>
 
-- <a href="site-sass-gabriel.netlify.app" target="_blank" style="font-size: 35px; text-decoration: underline; color: #eaeaea;">Acesse agora mesmo</a>
+- <a href="https://site-sass-gabriel.netlify.app" target="_blank" style="font-size: 35px; text-decoration: underline; color: #eaeaea;">Acesse agora mesmo</a>
 
 ## <p style="width: 600px; height: 1200px; padding-top: 30px;">Página principal<br><br> ![Layout Site](./img/main-site.png)</p>
