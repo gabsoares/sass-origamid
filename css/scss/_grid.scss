@@ -1,0 +1,132 @@
+// GRID Variables
+$columns: 12;
+$espacamento: 20px;
+$large-device: 1200px;
+$medium-device: 760px;
+$small-device: 454px;
+
+// Box-sizing
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+// Media-Querie Mixin
+@mixin device($size){
+    @if $size == large {
+        @media screen and (min-width: #{$large-device}){
+            @content;
+        }
+    }
+    @else if $size == medium {
+        @media screen and (min-width: #{$medium-device}) and (max-width: #{$large-device - 1}){
+            @content;
+        }
+    }
+    @else if $size == small {
+        @media screen and (min-width: #{$small-device}) and (max-width: #{$medium-device - 1}){
+            @content;
+        }
+    }
+}
+
+// GRID Function
+
+@function grid($column, $offset: false){
+    $width: $column / $columns * 100 + "%";
+    $result: calc(#{$width} - #{$espacamento});
+    @if $offset == offset{
+        $espacamento: $espacamento / 2;
+    $result: calc(#{$width} + #{$espacamento});
+    }
+    @return $result;
+}
+
+//Gera classes de GRID
+@for $i from 1 through $columns{
+    .grid-#{$i}{
+        width: grid($i);
+    }
+}
+
+//Mixin estrutura do grid
+
+@mixin grid-structure{
+    float: left;
+    min-height: 1px;
+    margin-left: $espacamento / 2;
+    margin-right: $espacamento / 2;
+    @include device(small){
+        width: 100%; //Apenas uma coluna para mobile
+        float: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+//Seleciona todos os items que começam com grid- (ou seja, todos as classes do grid)
+[class^="grid-"]{
+    @include grid-structure;
+}
+
+//Gera as classes de offset
+@for $i from 1 through $columns{
+    .offset-#{$i}{
+        margin-left: grid($i, offset);
+        @extend %offset;
+    }
+}
+
+@include device(small){
+    %offset{
+        margin-left: 0px;
+    }
+}
+
+// Mixin de clearfix
+@mixin clearfix{
+    &::after, &::before{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+//Mixin do container
+@mixin container{
+    max-width: $large-device;
+    margin: 0px auto;
+    position: relative;
+    @include device(medium){
+        max-width: $medium-device;
+    }
+    @include device(small){
+        max-width: $small-device;
+        padding: 0 10px 0 10px;
+    }
+    @include clearfix;
+}
+
+.container{
+    @include container;
+}
+
+@mixin row{
+    position: relative;
+    margin-left: -$espacamento/2;
+    margin-right: -$espacamento/2;
+    @include device(small){
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    @include clearfix;
+}
+
+
+.row{
+    @include row;
+}
+
+div{
+    min-height: 50px !important;
+    margin-bottom: 20px;
+}
